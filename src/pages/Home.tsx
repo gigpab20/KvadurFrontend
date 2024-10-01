@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from "../components/Navbar";
 import Annoucement from "../components/Annoucement";
 import Footer from "../components/Footer";
+import Startpage from "../components/Startpage";
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
             <Annoucement/>
             <Navbar/>
             <div className="content">
-                {/* Hier kommt Ihr Hauptinhalt hin */}
+                <Startpage/>
             </div>
             <Footer/>
         </div>

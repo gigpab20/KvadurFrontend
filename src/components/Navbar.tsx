@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import {Badge} from "@mui/material";
 import kvadurImage from "../pics/kvadur.png"
+import {Link} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -63,6 +64,9 @@ const Navbar = () => {
                         <Input/>
                         <FaSearch style={{color:'gray', fontSize:16}}/>
                     </SearchContainer>
+                    <Link to={"/catalogue"} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        Katalog
+                    </Link>
                 </Left>
                 <Center> <img src={kvadurImage} alt="Kvadur" style={{ width: '100px', height: 'auto' }}/></Center>
                 <Right>
