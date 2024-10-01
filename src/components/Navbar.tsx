@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import {Badge} from "@mui/material";
+import kvadurImage from "../pics/kvadur.png"
 
 
 const Container = styled.div`
@@ -51,6 +52,7 @@ const MenuItem = styled.div`
         cursor: pointer;
         margin-left: 25px;`
 
+
 const Navbar = () => {
     return (
         <Container>
@@ -62,9 +64,9 @@ const Navbar = () => {
                         <FaSearch style={{color:'gray', fontSize:16}}/>
                     </SearchContainer>
                 </Left>
-                <Center><Logo>Kvadur</Logo></Center>
+                <Center> <img src={kvadurImage} alt="Kvadur" style={{ width: '100px', height: 'auto' }}/></Center>
                 <Right>
-                    <MenuItem>
+                <MenuItem>
                         <Badge badgeContent={4} color={"secondary"}>
                             <FaShoppingCart  size={"30px"}/>
                         </Badge>
