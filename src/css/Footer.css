@@ -3,7 +3,7 @@
     padding: 20px 0;
     width: 100%;
     bottom: 0;
-    /* position: fixed; */ /* Entkommentieren Sie diese Zeile, um den Footer am unteren Rand zu fixieren */
+    position: fixed; /* Entkommentieren Sie diese Zeile, um den Footer am unteren Rand zu fixieren */
 }
 
 .footer-content {

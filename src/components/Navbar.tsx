@@ -109,9 +109,23 @@ const Navbar = () => {
                     >
                         Katalog
                     </Link>
+                    <Link
+                        to="/contact"
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit',
+                            marginLeft: '50px',
+                            fontSize: '16px',
+                            fontWeight: '500',
+                        }}
+                    >
+                        Kontakt
+                    </Link>
                 </Left>
                 <Center>
-                    <LogoImage src={kvadurImage} alt="Kvadur" />
+                    <Link to="/">
+                        <LogoImage src={kvadurImage} alt="Kvadur" />
+                    </Link>
                 </Center>
                 <Right>
                     <MenuItem>
