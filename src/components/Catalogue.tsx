@@ -24,7 +24,7 @@ const Catalogue = () => {
 
     // Fetch data from the API
     useEffect(() => {
-        fetch('http://localhost:3000/products')
+        fetch('http://localhost:3003/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data.products);
