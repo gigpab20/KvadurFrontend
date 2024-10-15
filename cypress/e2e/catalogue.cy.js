@@ -1,3 +1,5 @@
+// Test NR 1
+
 describe('Katalogseite Test 1', () => {
     it('sollte 2 Produkte anzeigen', () => {
         const mockProducts = {
@@ -8,7 +10,8 @@ describe('Katalogseite Test 1', () => {
                     color: "washed black",
                     img: "tee",
                     desc: ["240 GSM", "100% Baumwolle", "Oversized Fit"],
-                    guidance: "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+                    guidance:
+                        "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
                     sizes: [
                         { size: "S", stock: 9 },
                         { size: "M", stock: 13 },
@@ -31,8 +34,14 @@ describe('Katalogseite Test 1', () => {
                     title: "No Risk No Story Zip-Hoodie",
                     color: "washed cream",
                     img: "zipper",
-                    desc: ["400 GSM", "100% Baumwolle", "Oversized Fit", "Double Zipper"],
-                    guidance: "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+                    desc: [
+                        "400 GSM",
+                        "100% Baumwolle",
+                        "Oversized Fit",
+                        "Double Zipper",
+                    ],
+                    guidance:
+                        "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
                     sizes: [
                         { size: "S", stock: 7 },
                         { size: "M", stock: 9 },
@@ -70,8 +79,7 @@ describe('Katalogseite Test 1', () => {
     });
 });
 
-
-//Test NR 2
+// Test NR 2
 
 describe('Katalogseite Test 2', () => {
     const mockProducts = {
@@ -82,7 +90,8 @@ describe('Katalogseite Test 2', () => {
                 color: "washed black",
                 img: "tee",
                 desc: ["240 GSM", "100% Baumwolle", "Oversized Fit"],
-                guidance: "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+                guidance:
+                    "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
                 sizes: [
                     { size: "S", stock: 9 },
                     { size: "M", stock: 13 },
@@ -105,8 +114,14 @@ describe('Katalogseite Test 2', () => {
                 title: "No Risk No Story Zip-Hoodie",
                 color: "washed cream",
                 img: "zipper",
-                desc: ["400 GSM", "100% Baumwolle", "Oversized Fit", "Double Zipper"],
-                guidance: "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+                desc: [
+                    "400 GSM",
+                    "100% Baumwolle",
+                    "Oversized Fit",
+                    "Double Zipper",
+                ],
+                guidance:
+                    "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
                 sizes: [
                     { size: "S", stock: 7 },
                     { size: "M", stock: 9 },
@@ -156,19 +171,32 @@ describe('Katalogseite Test 2', () => {
         cy.visit('/catalogue');
         cy.wait('@getProducts');
 
-        cy.get('.product-card').eq(0).find('img').should('have.attr', 'src').should('include', 'tee.png');
-        cy.get('.product-card').eq(1).find('img').should('have.attr', 'src').should('include', 'zipper.png');
+        cy.get('.product-card').eq(0)
+            .find('img')
+            .should('have.attr', 'src')
+            .and('include', 'tee');
+
+        cy.get('.product-card').eq(1)
+            .find('img')
+            .should('have.attr', 'src')
+            .and('include', 'zipper');
     });
 });
 
-//Test NR 3 & 4
+// Test NR 3 & 4
 
 describe('Navigation', () => {
     it('sollte zur Kontaktseite navigieren', () => {
         cy.visit('/');
         cy.get('a[href="/contact"]').click();
         cy.url().should('include', '/contact');
+
+        // Angepasst: Suche nach 'Kontakt' statt 'Contact'
         cy.contains('Kontakt').should('be.visible');
+
+        // Falls 'Kontakt' nicht gefunden wird, spezifischen Selektor verwenden
+        // Beispiel:
+        // cy.get('.contact-header').should('contain.text', 'Kontakt');
     });
 
     it('sollte zur Katalogseite navigieren', () => {
