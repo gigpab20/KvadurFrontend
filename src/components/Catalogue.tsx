@@ -1,15 +1,15 @@
+// src/components/Catalogue.tsx
+import React, { useState, useContext } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Annoucement from './Annoucement';
 import Modal from './Modal';
-import React, { useEffect, useState, useContext } from 'react';
 import { LanguageContext } from './LanguageContext';
 import { CartContext } from './CartContext';
 import '../css/Catalogue.css';
 
 import teeImage from '../pics/tee.png';
 import zipperImage from '../pics/zipper.png';
-
 
 interface Product {
     id: number;
@@ -25,8 +25,11 @@ interface Product {
     fabric: string;
 }
 
-const Catalogue: React.FC = () => {
-    const [products, setProducts] = useState<Product[]>([]);
+interface CatalogueProps {
+    products: Product[];
+}
+
+const Catalogue: React.FC<CatalogueProps> = ({ products }) => {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const [sizeSelectionOpen, setSizeSelectionOpen] = useState(false);
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -39,15 +42,6 @@ const Catalogue: React.FC = () => {
         tee: teeImage,
         zipper: zipperImage,
     };
-
-    useEffect(() => {
-        fetch('http://localhost:3003/products')
-            .then(response => response.json())
-            .then(data => {
-                setProducts(data.products);
-            })
-            .catch(error => console.error('Error fetching products:', error));
-    }, []);
 
     const filteredProducts = products.filter(product =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -124,7 +118,7 @@ const Catalogue: React.FC = () => {
                 {selectedProduct && (
                     <div className="product-details">
                         <img
-                            src={require(`../pics/${selectedProduct.img}.png`)}
+                            src={imageMap[selectedProduct.img] || ''}
                             alt={selectedProduct.title}
                             className="product-img"
                         />

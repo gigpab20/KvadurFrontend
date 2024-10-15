@@ -218,7 +218,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
                 </Center>
                 <Right>
                     <MenuItem>
-                        <Badge badgeContent={cartItems} color="secondary">
+                        <Badge badgeContent={cartItems.length} color="secondary">
                             <FaShoppingCart size="30px" className="fa-shopping-cart" />
                         </Badge>
                     </MenuItem>

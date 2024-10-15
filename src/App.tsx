@@ -1,7 +1,7 @@
+// src/App.tsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
-import ProductDetails from './components/ProductDetails';
 import './App.css';
 import { LanguageProvider } from "./components/LanguageContext";
 import { CartProvider } from "./components/CartContext";
@@ -43,7 +43,7 @@ function App() {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                            <Route path="/catalogue" element={<Catalogue products={products} />} />
+                        <Route path="/catalogue" element={<Catalogue products={products} />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="*" element={<NotFound />} />
