@@ -1,12 +1,18 @@
 import React, { createContext, useState, ReactNode } from 'react';
 
+// Definiere das Interface für die Produktinformationen im Warenkorb
+interface CartItem {
+    product: Product;
+    size: string;
+}
+
 interface CartContextProps {
-    cartItems: number;
-    addToCart: () => void;
+    cartItems: CartItem[];  // Liste von Produkten im Warenkorb
+    addToCart: (product: Product, size: string) => void;
 }
 
 export const CartContext = createContext<CartContextProps>({
-    cartItems: 0,
+    cartItems: [],
     addToCart: () => {},
 });
 
@@ -14,11 +20,21 @@ interface CartProviderProps {
     children: ReactNode;
 }
 
-export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-    const [cartItems, setCartItems] = useState(0);
+// Definiere das Interface für ein Produkt
+interface Product {
+    id: number;
+    title: string;
+    price: string;
+    currency: string;
+    img: string;
+    sizes: { size: string; stock: number }[];
+}
 
-    const addToCart = () => {
-        setCartItems(prev => prev + 1);
+export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+    const addToCart = (product: Product, size: string) => {
+        setCartItems(prevItems => [...prevItems, { product, size }]);
     };
 
     return (

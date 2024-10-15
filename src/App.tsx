@@ -1,9 +1,14 @@
-<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
 import ProductDetails from './components/ProductDetails';
 import './App.css';
+import { LanguageProvider } from "./components/LanguageContext";
+import { CartProvider } from "./components/CartContext";
+import Home from "./pages/Home";
+import Contact from "./components/Contact";
+import ProductDetail from "./components/ProductDetail";
+import NotFound from "./components/NotFound";
 
 // Definiere das Interface für die Produkte
 interface Product {
@@ -19,22 +24,6 @@ interface Product {
     reviews: { starAmount: number; title: string; text: string }[];
     fabric: string;
 }
-=======
-// src/App.tsx
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-} from 'react-router-dom';
-import Home from './pages/Home';
-import Catalogue from "./components/Catalogue";
-import Contact from "./components/Contact";
-import ProductDetail from "./components/ProductDetail";
-import NotFound from "./components/NotFound";
-import { LanguageProvider } from './components/LanguageContext';
-import { CartProvider } from './components/CartContext';
->>>>>>> Stashed changes
 
 function App() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -49,20 +38,12 @@ function App() {
     }, []);
 
     return (
-<<<<<<< Updated upstream
-        <Router>
-            <Routes>
-                <Route path="/" element={<Catalogue products={products} />} />
-                <Route path="/product/:id" element={<ProductDetails products={products} />} />
-            </Routes>
-        </Router>
-=======
         <LanguageProvider>
             <CartProvider>
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/catalogue" element={<Catalogue />} />
+                            <Route path="/catalogue" element={<Catalogue products={products} />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="*" element={<NotFound />} />
@@ -70,7 +51,6 @@ function App() {
                 </Router>
             </CartProvider>
         </LanguageProvider>
->>>>>>> Stashed changes
     );
 }
 
