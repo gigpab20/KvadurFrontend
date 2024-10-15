@@ -3,7 +3,7 @@
     padding: 20px 0;
     width: 100%;
     bottom: 0;
-    position: fixed; /* Entkommentieren Sie diese Zeile, um den Footer am unteren Rand zu fixieren */
+    position: fixed;
 }
 
 .footer-content {
@@ -11,23 +11,25 @@
     margin-bottom: 10px;
 }
 
-.footer-bottom {
-    text-align: center;
-    font-size: 14px;
-    color: #555;
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: #6c757d;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer-bottom a:hover {
+
 }
 
 .footer-bottom span {
     font-weight: bold;
-    color: #000;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Mindestens die Höhe des Viewports */
-}
-
-.content {
-    flex: 1; /* Nimmt den verfügbaren Platz ein */
+.footer-bottom a:first-of-type::before {
+    content: '';
 }

@@ -7,7 +7,8 @@ const Footer = () => {
             <div className="footer-content">
             </div>
             <div className="footer-bottom">
-                <p>Powered by <span>SYP-Team</span></p>
+                <p style={{textAlign:"center"}}>© 2024, Kvadur Powered by <span>SYP-Team</span><a href="/impressum">Impressum</a> <a
+                    href="/datenschutzerklaerung">Datenschutzerklärung</a></p>
             </div>
         </footer>
     );
