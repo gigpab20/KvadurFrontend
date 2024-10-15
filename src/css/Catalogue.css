@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif; /* Wendet die Schrift auf den gesamten Text an */
+    font-family: 'Poppins', sans-serif;
 }
 
 .product-grid {
@@ -11,7 +11,7 @@ body {
 }
 
 .product-card {
-    width: 250px;
+    width: 280px;
     height: 340px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -20,27 +20,28 @@ body {
     justify-content: space-between;
     text-align: center;
     border-radius: 8px;
-    font-family: 'Poppins', sans-serif; /* Modernere Schriftart für Karten */
+    font-family: 'Poppins', sans-serif;
+    margin-left: 50px;
 }
 
 .product-img {
     width: 100%;
-    height: 200px; /* Feste Höhe für die Bilder */
-    object-fit: cover; /* Verhindert Verzerrung der Bilder */
+    height: 230px;
+    object-fit: cover;
 }
 
 .product-title {
     font-size: 1.1em;
-    font-weight: 600; /* Kräftigere Schrift für den Titel */
-    margin: 5px 0; /* Reduziert den Abstand um den Titel */
-    color: #333; /* Modernes, dunkles Grau für den Titel */
+    font-weight: 600;
+    margin: 5px 0;
+    color: #333;
 }
 
 .product-price {
     font-size: 1em;
-    font-weight: 400; /* Normalgewicht für den Preis */
-    color: #666; /* Etwas helleres Grau für den Preis */
-    margin: 5px 0; /* Verringert den Abstand um den Preis */
+    font-weight: 400;
+    color: #666;
+    margin: 5px 0;
 }
 
 .buy-button {
@@ -64,4 +65,51 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f7f7f7;
     color: #333;
+}
+
+.sizes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.size-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.size-button.selected {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.size-button:disabled {
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.add-to-cart-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3;
 }
