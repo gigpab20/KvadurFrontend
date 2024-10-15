@@ -1,9 +1,24 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Annoucement from './Annoucement';
 import Modal from './Modal';
 import '../css/Catalogue.css';
+=======
+// src/components/Catalogue.tsx
+import React, { useEffect, useState, useContext } from 'react';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Annoucement from "./Annoucement";
+import { LanguageContext } from '../components/LanguageContext';
+import "../css/Catalogue.css";
+import { CartContext } from '../components/CartContext';
+
+// Static image imports
+import teeImage from '../pics/tee.png';
+import zipperImage from '../pics/zipper.png';
+>>>>>>> Stashed changes
 
 interface Product {
     id: number;
@@ -19,6 +34,7 @@ interface Product {
     fabric: string;
 }
 
+<<<<<<< Updated upstream
 interface CatalogueProps {
     products: Product[];
 }
@@ -71,21 +87,78 @@ const Catalogue: React.FC<CatalogueProps> = ({ products }) => {
                         className="product-card"
                         key={product.id}
                     >
+=======
+const imageMap: { [key: string]: string } = {
+    tee: teeImage,
+    zipper: zipperImage,
+    // Weitere Bilder hier hinzufügen
+};
+
+const Catalogue: React.FC = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const { language } = useContext(LanguageContext);
+    const { addToCart } = useContext(CartContext);
+
+    useEffect(() => {
+        fetch('http://localhost:3003/products')
+            .then(response => response.json())
+            .then(data => {
+                setProducts(data.products);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+    }, []);
+
+    const filteredProducts = products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const texts: { [key: string]: any } = {
+        DE: {
+            title: 'Unsere Produkte',
+            buy: 'Kaufen',
+        },
+        EN: {
+            title: 'Our Products',
+            buy: 'Buy',
+        },
+    };
+
+    const currentTexts = texts[language];
+
+    return (
+        <div>
+            <Annoucement />
+            <Navbar onSearch={setSearchTerm} />
+            <h1>{currentTexts.title}</h1>
+            <div className="product-grid">
+                {filteredProducts.map(product => (
+                    <div className="product-card" key={product.id}>
+>>>>>>> Stashed changes
                         <img
-                            src={require(`../pics/${product.img}.png`)}
+                            src={imageMap[product.img] || ''}
                             alt={product.title}
                             className="product-img"
                             onClick={() => openModal(product)}
                         />
                         <p className="product-title">{product.title}</p>
                         <p className="product-price">{`${product.price} ${product.currency}`}</p>
+<<<<<<< Updated upstream
                         {/* Kaufen-Button, der das Größenwahl-Popup öffnet */}
                         <button className="buy-button" onClick={() => openSizeSelection(product)}>
                             Kaufen
+=======
+                        <button
+                            className="buy-button"
+                            onClick={addToCart}
+                        >
+                            {currentTexts.buy}
+>>>>>>> Stashed changes
                         </button>
                     </div>
                 ))}
             </div>
+<<<<<<< Updated upstream
 
             <Footer />
 
@@ -144,6 +217,9 @@ const Catalogue: React.FC<CatalogueProps> = ({ products }) => {
                     </div>
                 )}
             </Modal>
+=======
+            <Footer />
+>>>>>>> Stashed changes
         </div>
     );
 };
