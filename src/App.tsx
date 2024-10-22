@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
 import Impressum from "./components/Impressum";
+import Datenschutzerklaerung from "./components/Datenschutzerklaerung";
 
 // Definiere das Interface für die Produkte
 interface Product {
@@ -48,6 +49,7 @@ function App() {
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="/impressum" element={<Impressum/>}/>
+                        <Route path="/datenschutzerklaerung" element={<Datenschutzerklaerung />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Router>
