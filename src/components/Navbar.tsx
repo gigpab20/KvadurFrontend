@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useContext } from 'react';
 import styled from "styled-components";
 import { FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
@@ -7,6 +6,7 @@ import kvadurImage from "../pics/kvadur.png";
 import { Link } from "react-router-dom";
 import { LanguageContext } from '../components/LanguageContext';
 import { CartContext } from '../components/CartContext';
+import '../css/Navbar.css'
 
 // Styled Components
 const Container = styled.div`
