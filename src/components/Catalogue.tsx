@@ -1,4 +1,3 @@
-// src/components/Catalogue.tsx
 import React, { useState, useContext } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
