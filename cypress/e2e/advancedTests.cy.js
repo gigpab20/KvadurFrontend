@@ -268,4 +268,19 @@ describe('Erweiterte Tests für die Kvadur-Frontend-Anwendung', () => {
         cy.contains('Catalogue').should('be.visible');
     });
 
+    it('sollte das Instagram-Icon anzeigen und die korrekte URL öffnen', () => {
+        cy.visit('/');
+
+        // Überprüfe, ob das Instagram-Icon sichtbar ist
+        cy.get('.footer-right a').should('be.visible');
+
+        // Überprüfe, ob der Link zur richtigen Instagram-Seite führt
+        cy.get('.footer-right a').should('have.attr', 'href', 'https://www.instagram.com/kvadur/');
+
+        // Überprüfe, ob der Link in einem neuen Tab geöffnet wird
+        cy.get('.footer-right a').should('have.attr', 'target', '_blank');
+
+        // Überprüfe, ob 'noopener noreferrer' als Sicherheitsmaßnahme gesetzt ist
+        cy.get('.footer-right a').should('have.attr', 'rel', 'noopener noreferrer');
+    });
 });
