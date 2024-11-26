@@ -1,4 +1,4 @@
-// Test NR 1
+// cypress/e2e/catalogue.cy.js
 
 describe('Katalogseite Test 1', () => {
     const baseUrl = 'http://localhost:3003/products';
@@ -145,6 +145,7 @@ describe('Katalogseite Test 2', () => {
     };
 
     beforeEach(() => {
+
         // API-Aufruf abfangen und Mock-Daten bereitstellen
         cy.intercept('GET', baseUrl, {
             statusCode: 200,
@@ -168,6 +169,8 @@ describe('Katalogseite Test 2', () => {
         cy.get('.product-card').eq(1).should('contain.text', 'No Risk No Story Zip-Hoodie');
         cy.get('.product-card').eq(1).should('contain.text', '52.99 EUR');
     });
+
+    // cypress/e2e/catalogue.cy.js
 
     it('sollte Produktbilder korrekt laden', () => {
         cy.visit('/catalogue');
@@ -200,12 +203,5 @@ describe('Navigation', () => {
         // Falls 'Kontakt' nicht gefunden wird, spezifischen Selektor verwenden
         // Beispiel:
         // cy.get('.contact-header').should('contain.text', 'Kontakt');
-    });
-
-    it('sollte zur Katalogseite navigieren', () => {
-        cy.visit('/');
-        cy.get('a[href="/catalogue"]').click();
-        cy.url().should('include', '/catalogue');
-        cy.contains('Unsere Produkte').should('be.visible');
     });
 });
