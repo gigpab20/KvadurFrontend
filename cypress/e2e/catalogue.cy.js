@@ -1,6 +1,7 @@
 // Test NR 1
 
 describe('Katalogseite Test 1', () => {
+    const baseUrl = 'http://localhost:3003/products';
     it('sollte 2 Produkte anzeigen', () => {
         const mockProducts = {
             products: [
@@ -63,7 +64,7 @@ describe('Katalogseite Test 1', () => {
         };
 
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'http://localhost:3003/products', {
+        cy.intercept('GET', baseUrl, {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
@@ -82,6 +83,7 @@ describe('Katalogseite Test 1', () => {
 // Test NR 2
 
 describe('Katalogseite Test 2', () => {
+    const baseUrl = 'http://localhost:3003/products';
     const mockProducts = {
         products: [
             {
@@ -144,7 +146,7 @@ describe('Katalogseite Test 2', () => {
 
     beforeEach(() => {
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'http://localhost:3003/products', {
+        cy.intercept('GET', baseUrl, {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
@@ -186,6 +188,7 @@ describe('Katalogseite Test 2', () => {
 // Test NR 3 & 4
 
 describe('Navigation', () => {
+    const baseUrl = 'http://localhost:3003/products';
     it('sollte zur Kontaktseite navigieren', () => {
         cy.visit('/');
         cy.get('a[href="/contact"]').click();
