@@ -1,7 +1,7 @@
 // cypress/e2e/catalogue.cy.js
 
 describe('Katalogseite Test 1', () => {
-    const baseUrl = 'http://localhost:3003/products';
+    const baseUrl = 'http://0.0.0.0:46081/products';
     it('sollte 2 Produkte anzeigen', () => {
         const mockProducts = {
             products: [
@@ -83,7 +83,7 @@ describe('Katalogseite Test 1', () => {
 // Test NR 2
 
 describe('Katalogseite Test 2', () => {
-    const baseUrl = 'http://localhost:3003/products';
+    const baseUrl = 'http://0.0.0.0:46081/products';
     const mockProducts = {
         products: [
             {
@@ -191,7 +191,7 @@ describe('Katalogseite Test 2', () => {
 // Test NR 3 & 4
 
 describe('Navigation', () => {
-    const baseUrl = 'http://localhost:3003/products';
+    const baseUrl = 'http://0.0.0.0:46081/products';
     it('sollte zur Kontaktseite navigieren', () => {
         cy.visit('/');
         cy.get('a[href="/contact"]').click();

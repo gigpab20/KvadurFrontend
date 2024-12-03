@@ -58,7 +58,7 @@ describe('Erweiterte Tests für die Kvadur-Frontend-Anwendung', () => {
         };
 
         // Intercept API-Aufruf und stelle Mock-Daten bereit
-        cy.intercept('GET', 'http://localhost:3003/products', {
+        cy.intercept('GET', 'http://0.0.0.0:46081/products', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
@@ -106,7 +106,7 @@ describe('Erweiterte Tests für die Kvadur-Frontend-Anwendung', () => {
         };
 
         // Intercept API-Aufruf für Produktdetails
-        cy.intercept('GET', `http://localhost:3003/products/${mockProduct.id}`, {
+        cy.intercept('GET', `http://0.0.0.0:46081/products/${mockProduct.id}`, {
             statusCode: 200,
             body: { product: mockProduct },
         }).as('getProductDetails');
@@ -179,7 +179,7 @@ describe('Erweiterte Tests für die Kvadur-Frontend-Anwendung', () => {
         };
 
         // Intercept API-Aufruf und stelle Mock-Daten bereit
-        cy.intercept('GET', 'http://localhost:3003/products', {
+        cy.intercept('GET', 'http://0.0.0.0:46081/products', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
