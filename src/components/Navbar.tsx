@@ -1,21 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import styled from "styled-components";
-import { FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { Badge } from "@mui/material";
 import kvadurImage from "../pics/kvadur.png";
 import { Link } from "react-router-dom";
-import { LanguageContext } from '../components/LanguageContext';
-import { CartContext } from '../components/CartContext';
-import '../css/Navbar.css'
 
-// Styled Components
 const Container = styled.div`
-    height: 100px;
+    height: 100px; /* Erhöht, um mehr Platz für das Logo zu schaffen */
     background-color: #f8f9fa;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    position: relative;
 `;
 
 const Wrapper = styled.div`
@@ -40,7 +35,7 @@ const SearchContainer = styled.div`
     background-color: #e9ecef;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    width: 300px;
+    width: 300px; /* Breiter für mehr Platz */
 
     &:hover {
         background-color: #dee2e6;
@@ -57,7 +52,7 @@ const Input = styled.input`
     outline: none;
     background: transparent;
     padding: 0 10px;
-    width: 100%;
+    width: 100%; /* Stellt sicher, dass das Input-Feld den ganzen Platz nutzt */
     font-size: 16px;
 `;
 
@@ -65,10 +60,6 @@ const Left = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
-
-    @media (max-width: 768px) {
-        display: none;
-    }
 `;
 
 const Right = styled.div`
@@ -87,7 +78,7 @@ const Center = styled.div`
 const LogoImage = styled.img`
     width: 120px;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Verhindert das Abschneiden des Logos */
 `;
 
 const MenuItem = styled.div`
@@ -96,94 +87,14 @@ const MenuItem = styled.div`
     margin-left: 35px;
 `;
 
-const MobileMenuIcon = styled.div`
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-
-    @media (max-width: 768px) {
-        display: block;
-    }
-`;
-
-const MobileMenu = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    a {
-        margin-bottom: 20px;
-        font-size: 18px;
-        color: inherit;
-        text-decoration: none;
-    }
-`;
-
-// Navbar Component
-interface NavbarProps {
-    onSearch?: (searchTerm: string) => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { language, setLanguage } = useContext(LanguageContext);
-    const { cartItems } = useContext(CartContext);
-
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-        if (onSearch) {
-            onSearch(e.target.value);
-        }
-    };
-
-    const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setLanguage(e.target.value);
-    };
-
-    const texts: { [key: string]: any } = {
-        DE: {
-            catalogue: 'Katalog',
-            contact: 'Kontakt',
-            searchPlaceholder: 'Suche...',
-        },
-        EN: {
-            catalogue: 'Catalogue',
-            contact: 'Contact',
-            searchPlaceholder: 'Search...',
-        },
-    };
-
-    const currentTexts = texts[language];
-
+const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <MobileMenuIcon className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                    <FaBars />
-                </MobileMenuIcon>
                 <Left>
-                    <select
-                        className="language-switcher"
-                        value={language}
-                        onChange={handleLanguageChange}
-                        style={{ marginRight: '20px' }}
-                    >
-                        <option value="DE">DE</option>
-                        <option value="EN">EN</option>
-                    </select>
+                    <Language>EN</Language>
                     <SearchContainer>
-                        <Input
-                            placeholder={currentTexts.searchPlaceholder}
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                        />
+                        <Input placeholder="Search..." />
                         <FaSearch style={{ color: 'gray', fontSize: 20 }} />
                     </SearchContainer>
                     <Link
@@ -196,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
                             fontWeight: '500',
                         }}
                     >
-                        {currentTexts.catalogue}
+                        Katalog
                     </Link>
                     <Link
                         to="/contact"
@@ -208,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
                             fontWeight: '500',
                         }}
                     >
-                        {currentTexts.contact}
+                        Kontakt
                     </Link>
                 </Left>
                 <Center>
@@ -218,18 +129,12 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
                 </Center>
                 <Right>
                     <MenuItem>
-                        <Badge badgeContent={cartItems.length} color="secondary">
-                            <FaShoppingCart size="30px" className="fa-shopping-cart" />
+                        <Badge badgeContent={0} color="secondary">
+                            <FaShoppingCart size="30px" />
                         </Badge>
                     </MenuItem>
                 </Right>
             </Wrapper>
-            {isMobileMenuOpen && (
-                <MobileMenu className="mobile-menu">
-                    <Link to="/catalogue" onClick={() => setIsMobileMenuOpen(false)}>{currentTexts.catalogue}</Link>
-                    <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>{currentTexts.contact}</Link>
-                </MobileMenu>
-            )}
         </Container>
     );
 };
