@@ -70,7 +70,7 @@ describe('Katalogseite Test 1', () => {
         }).as('getProducts');
 
         // Besuchen der Katalogseite
-        cy.visit('/catalogue');
+        cy.visit('http://mirfac.uberspace.de:46080/catalogue');
 
         // Warten, bis der API-Aufruf abgeschlossen ist
         cy.wait('@getProducts');
