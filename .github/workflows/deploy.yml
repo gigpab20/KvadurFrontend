@@ -3,7 +3,9 @@ name: Deploy to Uberspace
 on:
   push:
     branches:
-      - main
+      - testActions
+
+
 
 jobs:
   deploy:
