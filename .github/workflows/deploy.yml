@@ -38,7 +38,7 @@ jobs:
 
       # Cypress Tests for Frontend
       - name: Run Cypress Tests (Frontend)
-        working-directory: ./frontend
+        working-directory: .
         run: |
           npm install
           npx cypress install
