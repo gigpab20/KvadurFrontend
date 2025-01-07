@@ -24,7 +24,7 @@ jobs:
 
       # Frontend Build and Deployment
       - name: Install and Build React Frontend
-        working-directory: ./frontend
+        working-directory: /
         run: |
           npm install
           npm run build
