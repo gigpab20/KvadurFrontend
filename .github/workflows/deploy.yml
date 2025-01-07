@@ -33,7 +33,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          scp -r ./frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+          mirfac.uberspace.de ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMRZxT1r9CPdqrzfBjuGdfPq7PdkAP18tyWOoWCeptj  >> ~/.ssh/known_hosts
+          scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
 
       # Cypress Tests for Frontend
       - name: Run Cypress Tests (Frontend)
