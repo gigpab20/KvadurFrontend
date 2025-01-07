@@ -1,0 +1,43 @@
+name: Deploy to Uberspace
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        #with:
+          #node-version: '16'
+
+      # Frontend Build and Deployment
+      - name: Install and Build React Frontend
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy React Frontend
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          scp -r ./frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+
+      # Cypress Tests for Frontend
+      - name: Run Cypress Tests (Frontend)
+        working-directory: ./frontend
+        run: |
+          npm install
+          npx cypress install
+          npx cypress run
