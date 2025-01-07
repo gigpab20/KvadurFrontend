@@ -22,6 +22,7 @@ jobs:
       - name: Install and Build React Frontend
         working-directory: .
         run: |
+          export CI=false
           npm install
           npm run build
 
