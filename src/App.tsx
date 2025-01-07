@@ -11,6 +11,8 @@ import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
 import Impressum from "./components/Impressum";
 import Datenschutzerklaerung from "./components/Datenschutzerklaerung";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 // Definiere das Interface für die Produkte
 interface Product {
@@ -30,8 +32,11 @@ interface Product {
 function App() {
     const [products, setProducts] = useState<Product[]>([]);
 
+    //für server zum deployen:
+    //http://mirfac.uberspace.de:46081/products
+
     useEffect(() => {
-        fetch('http://mirfac.uberspace.de:46081/products')
+        fetch('http://localhost:46081/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data.products);
@@ -48,6 +53,8 @@ function App() {
                         <Route path="/catalogue" element={<Catalogue products={products} />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
                         <Route path="/impressum" element={<Impressum/>}/>
                         <Route path="/datenschutzerklaerung" element={<Datenschutzerklaerung />} />
                         <Route path="*" element={<NotFound />} />
