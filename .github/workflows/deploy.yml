@@ -40,8 +40,10 @@ jobs:
       - name: Run Cypress Tests (Frontend)
         working-directory: .
         run: |
-          npm install
-          npm install typescript
-          npm install cypress
-          npx cypress install
-          npx cypress run
+           ssh kakvadur@mirfac.uberspace.de "
+           cd ~/backend/ &&
+           npm install &&
+           npm install cypress &&
+           npm install typescript &&
+           npx cypress run
+           "
