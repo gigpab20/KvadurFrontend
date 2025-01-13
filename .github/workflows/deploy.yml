@@ -41,5 +41,7 @@ jobs:
         working-directory: .
         run: |
           npm install
+          npm install typescript
+          npm install cypress
           npx cypress install
           npx cypress run
