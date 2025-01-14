@@ -33,4 +33,4 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-          scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/frontend/
+          scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
