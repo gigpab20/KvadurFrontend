@@ -31,7 +31,7 @@ function App() {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
-        fetch('http://mirfac.uberspace.de/products')
+        fetch('http://localhost:46081/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data.products);
