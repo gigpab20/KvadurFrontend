@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - testActions
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
