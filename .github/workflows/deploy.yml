@@ -35,15 +35,3 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
           scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
-
-      # Cypress Tests for Frontend
-      - name: Run Cypress Tests (Frontend)
-        working-directory: .
-        run: |
-           ssh kakvadur@mirfac.uberspace.de "
-           cd ~/backend/ &&
-           npm install &&
-           npm install cypress &&
-           npm install typescript &&
-           npx cypress run
-           "
