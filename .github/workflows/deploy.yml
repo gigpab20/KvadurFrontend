@@ -36,3 +36,4 @@ jobs:
           scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
           
           
+          
