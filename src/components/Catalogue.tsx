@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, { useState, useContext } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Annoucement from './Annoucement';
@@ -24,27 +24,18 @@ interface Product {
     fabric: string;
 }
 
+interface CatalogueProps {
+    products: Product[];
+}
 
-const Catalogue = () => {
+const Catalogue: React.FC<CatalogueProps> = ({ products }) => {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const [sizeSelectionOpen, setSizeSelectionOpen] = useState(false);
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
-    const [products, setProducts] = useState<Product[]>([]);
-
 
     const { language } = useContext(LanguageContext);
     const { addToCart } = useContext(CartContext);
-
-
-    useEffect(() => {
-        fetch('http://localhost:46081/products')
-            .then(response => response.json())
-            .then(data => {
-                setProducts(data.products);
-            })
-            .catch(error => console.error('Error fetching products:', error));
-    }, []);
 
     const imageMap: { [key: string]: string } = {
         tee: teeImage,
