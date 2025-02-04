@@ -38,7 +38,7 @@ const Catalogue = () => {
 
 
     useEffect(() => {
-        fetch('https://kakvadur.uber.space:46081/products')
+        fetch('http://localhost:46081/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data.products);
