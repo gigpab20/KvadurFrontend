@@ -28,16 +28,7 @@ interface Product {
 }
 
 function App() {
-    const [products, setProducts] = useState<Product[]>([]);
 
-    useEffect(() => {
-        fetch('https://kakvadur.uber.space:46081/products')
-            .then(response => response.json())
-            .then(data => {
-                setProducts(data.products);
-            })
-            .catch(error => console.error('Error fetching products:', error));
-    }, []);
 
     return (
         <LanguageProvider>
@@ -45,7 +36,7 @@ function App() {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/catalogue" element={<Catalogue products={products} />} />
+                        <Route path="/catalogue" element={<Catalogue />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="/impressum" element={<Impressum/>}/>
