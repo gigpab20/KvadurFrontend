@@ -50,9 +50,7 @@ function App() {
                         <Route path="/product/:id" element={<ProductDetail />} />
                         <Route path="/impressum" element={<Impressum/>}/>
                         <Route path="/datenschutzerklaerung" element={<Datenschutzerklaerung />} />
-                        {
-                            // <Route path="/*" element={<NotFound />} />
-                        }
+                        <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </Router>
             </CartProvider>
