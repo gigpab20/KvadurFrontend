@@ -60,21 +60,16 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
-            supervisorctl stop kvadur-backend
-          " || { echo "Failed to stop backend"; exit 1; }
+            supervisorctl stop kvadur-backend || true
+          "
 
-          mkdir -p /tmp/backend_deploy
-          rsync -av --exclude=node_modules --exclude=mongodb --exclude=logs ./ /tmp/backend_deploy/
-
-          tar -czf backend.tar.gz -C /tmp/backend_deploy . || { echo "Tar command failed"; exit 1; }
-
-          scp -o StrictHostKeyChecking=no backend.tar.gz kakvadur@mirfac.uberspace.de:~/ || { echo "SCP failed"; exit 1; }
+          scp -o StrictHostKeyChecking=no -r . kakvadur@mirfac.uberspace.de:~/backend/
 
           ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
-            tar -xzf backend.tar.gz -C ~/backend/ &&
-            rm backend.tar.gz
-          " || { echo "Tar extraction failed"; exit 1; }
-
-          ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
+            chmod +x ~/backend/bin/www ~/backend/app.js &&
+            cd ~/backend &&
+            npm install --production &&
             supervisorctl start kvadur-backend
-          " || { echo "Failed to start backend"; exit 1; }
+          " || { echo 'Failed to start backend'; exit 1; }
+      
+      
