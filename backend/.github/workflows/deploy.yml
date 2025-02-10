@@ -1,0 +1,31 @@
+name: Deploy to Uberspace
+
+on:
+  push:
+    branches:
+      - githubActions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
+      - name: Deploy Backend Executable
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+          scp -r ./* kakvadur@mirfac.uberspace.de:~/backend/
+          ssh kakvadur@mirfac.uberspace.de "
+            cd ~/backend/ &&
+            supervisorctl restart kvadur-backend
+          "

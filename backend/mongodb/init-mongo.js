@@ -1,0 +1,104 @@
+db = db.getSiblingDB('kvadur');
+
+db.products.insertMany(
+  [
+    {
+      "id": 1,
+      "title": "No Risk No Story Tee",
+      "color": "washed black",
+      "img": "tee",
+      "desc": [
+        "240 GSM",
+        "100% Baumwolle",
+        "Oversized Fit"
+      ],
+      "guidance": "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 9
+        },
+        {
+          "size": "M",
+          "stock": 13
+        },
+        {
+          "size": "L",
+          "stock": 11
+        },
+        {
+          "size": "XL",
+          "stock": 8
+        }
+      ],
+      "price": "31.99",
+      "currency": "EUR",
+      "reviews": [
+        {
+          "starAmount": 5,
+          "title": "Exzellente Qualität für diesen Preis",
+          "text": "gute diese"
+        }
+      ],
+      "fabric": "Baumwolle"
+    },
+    {
+      "id": 2,
+      "title": "No Risk No Story Zip-Hoodie",
+      "color": "washed cream",
+      "img": "zipper",
+      "desc": [
+        "400 GSM",
+        "100% Baumwolle",
+        "Oversized Fit",
+        "Double Zipper"
+      ],
+      "guidance": "Bitte bei 30 Grad pflegeleicht waschen und keinen Weichspüler verwenden.",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 7
+        },
+        {
+          "size": "M",
+          "stock": 9
+        },
+        {
+          "size": "L",
+          "stock": 8
+        },
+        {
+          "size": "XL",
+          "stock": 4
+        }
+      ],
+      "price": "52.99",
+      "currency": "EUR",
+      "reviews": [
+        {
+          "starAmount": 5,
+          "title": "Exzellente Qualität für diesen Preis",
+          "text": "gute diese"
+        }
+      ],
+      "fabric": "Baumwolle"
+    }
+  ]
+);
+
+db.users.insertMany(
+  [
+    {
+      "username": "jb",
+      "password": "ersterUser"
+    },
+    {
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "username": "zweiterUser",
+      "password": "password2"
+    }
+  ]
+);
