@@ -218,9 +218,11 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
                 </Center>
                 <Right>
                     <MenuItem>
-                        <Badge badgeContent={cartItems.length} color="secondary">
-                            <FaShoppingCart size="30px" className="fa-shopping-cart" />
-                        </Badge>
+                        <Link to="/cart" style={{ color: 'inherit' }}>
+                            <Badge badgeContent={cartItems.length} color="secondary">
+                                <FaShoppingCart size="30px" className="fa-shopping-cart" />
+                            </Badge>
+                        </Link>
                     </MenuItem>
                 </Right>
             </Wrapper>
