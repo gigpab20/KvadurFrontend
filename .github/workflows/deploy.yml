@@ -64,8 +64,8 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-          scp -r ./* kakvadur@mirfac.uberspace.de:~/backend/
-          ssh kakvadur@mirfac.uberspace.de "
+          scp -v -r ./* kakvadur@mirfac.uberspace.de:~/backend/
+          ssh -vvv kakvadur@mirfac.uberspace.de "
             cd ~/backend/ &&
             supervisorctl restart kvadur-backend
           "
