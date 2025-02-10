@@ -59,17 +59,17 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
-            supervisorctl stop kvadur-backend || true
-          "
-
-          scp -o StrictHostKeyChecking=no -r . kakvadur@mirfac.uberspace.de:~/backend/
-
-          ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
-            chmod +x ~/backend/bin/www ~/backend/app.js &&
-            cd ~/backend &&
-            npm install --production &&
-            supervisorctl start kvadur-backend
-          " || { echo 'Failed to start backend'; exit 1; }
+            ls
+            pwd
+            mkdir -p ~/.ssh
+            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+            
+            scp -v -r ./* kakvadur@mirfac.uberspace.de:~/backend/
+            ssh kakvadur@mirfac.uberspace.de "
+              cd ~/backend/ &&
+              supervisorctl restart kvadur-backend
+            "
       
       
