@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install and Build React Frontend
-        working-directory: /frontend/
+        working-directory: frontend/
         run: |
           export CI=false
           npm install
@@ -33,7 +33,7 @@ jobs:
           scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
 
       - name: Deploy Backend Executable
-        working-directory: /backend/
+        working-directory: backend/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
