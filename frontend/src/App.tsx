@@ -36,7 +36,8 @@ function App() {
     //http://mirfac.uberspace.de:46081/products
 
     useEffect(() => {
-        fetch('https://kakvadur.uber.space/api/products/')
+        fetch('https://kakvadur.uber.space/api/products/'
+        )
 
             .then(response => response.json())
             .then(data => {
