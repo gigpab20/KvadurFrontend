@@ -20,7 +20,7 @@ describe('Produktdetailseite - Überprüfung der Anzeige', () => {
         }).as('getProductDetails');
 
         // Besuche die Produktdetailseite
-        cy.visit(`/product/${mockProduct.id}`);
+        cy.visit(`http://0.0.0.0:46081/product/${mockProduct.id}`);
         cy.wait('@getProductDetails');
 
         // Überprüfe, ob die Produktdetails korrekt angezeigt werden

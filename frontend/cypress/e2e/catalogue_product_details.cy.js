@@ -24,7 +24,7 @@ describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
 
     beforeEach(() => {
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', '/products', {
+        cy.intercept('GET', 'http://0.0.0.0:46081/products', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
@@ -32,7 +32,7 @@ describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
 
     it('sollte die korrekten Produktnamen und Preise anzeigen', () => {
         // Besuchen der Katalogseite
-        cy.visit('/catalogue');
+        cy.visit('http://0.0.0.0:46081/catalogue');
 
         // Warten, bis der API-Aufruf abgeschlossen ist
         cy.wait('@getProducts');
