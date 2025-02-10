@@ -40,13 +40,13 @@ describe('Katalogseite - Überprüfung der Produktanzahl', () => {
         };
 
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'http://0.0.0.0:46081/products', {
+        cy.intercept('GET', 'http://0.0.0.0:46080/products', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
 
         // Besuchen der Katalogseite
-        cy.visit('http://0.0.0.0:46081/catalogue');
+        cy.visit('http://0.0.0.0:46080/catalogue');
 
         // Warten, bis der API-Aufruf abgeschlossen ist
         cy.wait('@getProducts');
