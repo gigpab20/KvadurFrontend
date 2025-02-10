@@ -30,8 +30,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/products', productsRouter);
+app.use('/api/', indexRouter);
+app.use('/api/user', userRouter);
+app.use('/api/products', productsRouter);
 
 module.exports = app;

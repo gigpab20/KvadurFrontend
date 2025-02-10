@@ -22,11 +22,11 @@ describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
         };
 
         // Intercept API-Aufruf und stelle Mock-Daten bereit
-        /*cy.intercept('GET', 'http://0.0.0.0:46081/products/', {
+        cy.intercept('GET', 'http://0.0.0.0:46081/products/', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
-*/
+
         // Besuche die Katalogseite
         cy.visit('http://0.0.0.0:46080/catalogue');
         cy.wait('@getProducts');
