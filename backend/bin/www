@@ -17,7 +17,7 @@ const cors = require('cors');
 //var privateKey  = fs.readFileSync('/home/kakvadur/etc/certificates/kakvadur.uber.space.key', 'utf8');
 //var certificate = fs.readFileSync('/home/kakvadur/etc/certificates/kakvadur.uber.space.crt', 'utf8');
 
-v//ar credentials = {key: privateKey, cert: certificate};
+//var credentials = {key: privateKey, cert: certificate};
 
 
 /**
