@@ -36,7 +36,7 @@ const ProductDetail: React.FC = () => {
     const { language } = useContext(LanguageContext);
 
     useEffect(() => {
-        fetch(`http://mirfac.uberspace.de:46081/products/${id}`)
+        fetch(`http://localhost:46081/products/${id}`)
             .then(response => response.json())
             .then(data => {
                 setProduct(data.product);

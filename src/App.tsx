@@ -36,7 +36,8 @@ function App() {
     //http://mirfac.uberspace.de:46081/products
 
     useEffect(() => {
-        fetch('http://localhost:46081/products')
+        fetch('https://kakvadur.uber.space:46081/products')
+
             .then(response => response.json())
             .then(data => {
                 setProducts(data.products);
@@ -57,7 +58,7 @@ function App() {
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/impressum" element={<Impressum/>}/>
                         <Route path="/datenschutzerklaerung" element={<Datenschutzerklaerung />} />
-                        <Route path="*" element={<NotFound />} />
+                        <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </Router>
             </CartProvider>
