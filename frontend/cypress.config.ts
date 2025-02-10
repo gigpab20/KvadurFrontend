@@ -2,6 +2,6 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://mirfac.uberspace.de:46081', // Haupturl
+    baseUrl: 'http://0.0.0.0:46081', // Haupturl
   },
 });
