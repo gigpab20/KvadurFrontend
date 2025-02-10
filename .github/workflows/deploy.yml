@@ -30,7 +30,8 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-          scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+          pwd
+          scp -r frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
 
       - name: Deploy Backend Executable
         working-directory: backend/
