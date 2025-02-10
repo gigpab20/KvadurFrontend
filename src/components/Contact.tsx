@@ -71,6 +71,24 @@ const Contact: React.FC = () => {
 
     const currentTexts = texts[language];
 
+    const getMailtoLink = () => {
+        if (language === 'DE') {
+            // German structure
+            return `mailto:kvadur.clothing@gmail.com?subject=Nachricht von ${formData.name}&body=Sehr geehrter Herr Kvadur,%0D%0A%0D%0A${encodeURIComponent(
+                formData.message
+            )}%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A${encodeURIComponent(
+                formData.name
+            )}`;
+        } else {
+            // English structure
+            return `mailto:kvadur.clothing@gmail.com?subject=Message from ${formData.name}&body=Hi Mr. Kakvadur,%0D%0A%0D%0A${encodeURIComponent(
+                formData.message
+            )}%0D%0A%0D%0ABest Regards,%0D%0A${encodeURIComponent(
+                formData.name
+            )}`;
+        }
+    };
+
     return (
         <div>
             <Annoucement />
@@ -108,10 +126,24 @@ const Contact: React.FC = () => {
                         />
                         {errors.message && <span className="error-message">{errors.message}</span>}
                     </label>
-                    <button type="submit">{currentTexts.send}</button>
+                    <a
+                        href={getMailtoLink()}
+                        onClick={(e) => {
+                            if (!formData.name || !formData.email || !formData.message) {
+                                e.preventDefault();
+                                alert(
+                                    language === 'DE'
+                                        ? 'Bitte füllen Sie alle Felder aus.'
+                                        : 'Please fill out all fields.'
+                                );
+                            }
+                        }}
+                    >
+                        <button type="button">{currentTexts.send}</button>
+                    </a>
                 </form>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 };
