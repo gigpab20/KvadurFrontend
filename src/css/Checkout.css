@@ -1,0 +1,118 @@
+/* src/components/Checkout/Checkout.css */
+
+/* Container für alles im Checkout */
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 15px 25px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #e9ecef;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.tab:hover {
+    background-color: #dee2e6;
+}
+
+.tab.active {
+    background-color: #343a40; /* dunkles Grau */
+    color: #fff;
+}
+
+/* Bereich in dem der jeweilige Tab-Content angezeigt wird */
+.tab-content {
+    width: 100%;
+    max-width: 600px; /* oder 800px, wie du magst */
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Titel eines Abschnitts */
+.section-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* Form-Gruppe mit Label und Input */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Eingabefelder */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Allgemeiner Button-Stil */
+.button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover-Effekt */
+.button:hover {
+    background-color: #495057;
+}
+
+/* Spezielle Buttons */
+.next-button {
+    float: right;
+}
+
+.submit-button {
+    float: right;
+}
+
+/* Warenkorb-Item styling */
+.cart-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-total {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Review-Abschnitte */
+.review-section {
+    margin-bottom: 20px;
+}
