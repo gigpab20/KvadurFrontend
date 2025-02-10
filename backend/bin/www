@@ -11,7 +11,7 @@ var fs = require('fs');
 
 var app = require('../app');
 var debug = require('debug')('kvadur-backend:server');
-var https = require('https');
+var http = require('http');
 const cors = require('cors');
 
 //var privateKey  = fs.readFileSync('/home/kakvadur/etc/certificates/kakvadur.uber.space.key', 'utf8');
@@ -37,8 +37,8 @@ app.use((req, res, next) => {
  * Create HTTP server.
  */
 
-var server = https.createServer(credentials, app);
-
+//var server = https.createServer(credentials, app);
+var server = http.createServer(app)
 
 /**
  * Listen on provided port, on all network interfaces.
