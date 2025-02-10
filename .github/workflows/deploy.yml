@@ -63,7 +63,10 @@ jobs:
             supervisorctl stop kvadur-backend
           " || { echo "Failed to stop backend"; exit 1; }
 
-          tar -czf backend.tar.gz . || { echo "Tar command failed"; exit 1; }
+          mkdir -p /tmp/backend_deploy
+          rsync -av --exclude=node_modules --exclude=mongodb --exclude=logs ./ /tmp/backend_deploy/
+
+          tar -czf backend.tar.gz -C /tmp/backend_deploy . || { echo "Tar command failed"; exit 1; }
 
           scp -o StrictHostKeyChecking=no backend.tar.gz kakvadur@mirfac.uberspace.de:~/ || { echo "SCP failed"; exit 1; }
 
