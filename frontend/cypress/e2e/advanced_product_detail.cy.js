@@ -14,7 +14,7 @@ describe('Produktdetailseite - Überprüfung der Anzeige', () => {
         };
 
         // Intercept API-Aufruf für Produktdetails
-        cy.intercept('GET', `/products/${mockProduct.id}`, {
+        cy.intercept('GET', `https://kakvadur.uber.space/api/products/${mockProduct.id}`, {
             statusCode: 200,
             body: { product: mockProduct },
         }).as('getProductDetails');

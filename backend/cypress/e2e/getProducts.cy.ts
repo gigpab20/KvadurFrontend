@@ -1,6 +1,6 @@
 describe('GET /products', () => {
     it('should return all Products with status 200', () => {
-        cy.request("http://0.0.0.0:46081/products/")
+        cy.request("https://kakvadur.uber.space/api/products/")
 
             .then((res) => {
                 expect(res.status).to.eq(200);
@@ -38,7 +38,7 @@ describe('GET /products', () => {
     });
 
     it('should validate size constraints for all products', () => {
-        cy.request("http://0.0.0.0:46081/products/")
+        cy.request("https://kakvadur.uber.space/api/products/")
             .then((res) => {
                 expect(res.status).to.eq(200);
                 expect(res.body.products).to.be.an("array");
@@ -53,7 +53,7 @@ describe('GET /products', () => {
     });
 
     it('should validate review constraints for all products', () => {
-        cy.request("http://0.0.0.0:46081/products/")
+        cy.request("https://kakvadur.uber.space/api/products/")
             .then((res) => {
                 expect(res.status).to.eq(200);
 

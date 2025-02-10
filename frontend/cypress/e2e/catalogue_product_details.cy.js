@@ -24,7 +24,7 @@ describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
 
     beforeEach(() => {
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'http://0.0.0.0:46081/products/', {
+        cy.intercept('GET', 'https://kakvadur.uber.space/api/products/', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');

@@ -1,6 +1,6 @@
 describe('GET /user/username', () => {
     it('should return a specific user with status 200 and check if username is admin', () => {
-        cy.request("http://0.0.0.0:46081/user/username/admin")
+        cy.request("https://kakvadur.uber.space/api/user/username/admin")
             .then((res) => {
                 expect(res.status).to.eq(200);
                 expect(res.body).to.be.an("Object");
