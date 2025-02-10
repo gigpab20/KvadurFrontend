@@ -53,25 +53,22 @@ jobs:
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
           pwd
           scp -r frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+
       - name: Deploy Backend Executable
         working-directory: backend/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          ls
-          pwd
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+          ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
+            supervisorctl stop kvadur-backend
+          "
 
-          tar -czf backend.tar.gz ./
+          tar -czf backend.tar.gz --warning=no-file-changed ./
+
           scp -o StrictHostKeyChecking=no backend.tar.gz kakvadur@mirfac.uberspace.de:~/
+
           ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
             tar -xzf backend.tar.gz -C ~/backend/ &&
             rm backend.tar.gz &&
-            supervisorctl restart kvadur-backend & disown
+            supervisorctl start kvadur-backend
           "
-      
-          
-          
