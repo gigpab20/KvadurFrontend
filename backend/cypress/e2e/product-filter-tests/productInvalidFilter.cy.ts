@@ -1,5 +1,5 @@
 describe('Invalid Filter Mode', () => {
-    const baseUrl = 'http://localhost:3003/products';
+    const baseUrl = 'http://0.0.0.0:46081/products';
 
     it('should return an error for an invalid filter mode', () => {
         cy.request({
