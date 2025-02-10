@@ -61,14 +61,17 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
             supervisorctl stop kvadur-backend
-          "
+          " || { echo "Failed to stop backend"; exit 1; }
 
-          tar -czf backend.tar.gz --warning=no-file-changed ./
+          tar -czf backend.tar.gz . || { echo "Tar command failed"; exit 1; }
 
-          scp -o StrictHostKeyChecking=no backend.tar.gz kakvadur@mirfac.uberspace.de:~/
+          scp -o StrictHostKeyChecking=no backend.tar.gz kakvadur@mirfac.uberspace.de:~/ || { echo "SCP failed"; exit 1; }
 
           ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
             tar -xzf backend.tar.gz -C ~/backend/ &&
-            rm backend.tar.gz &&
+            rm backend.tar.gz
+          " || { echo "Tar extraction failed"; exit 1; }
+
+          ssh -o StrictHostKeyChecking=no kakvadur@mirfac.uberspace.de "
             supervisorctl start kvadur-backend
-          "
+          " || { echo "Failed to start backend"; exit 1; }
