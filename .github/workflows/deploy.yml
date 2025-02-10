@@ -3,8 +3,7 @@ name: Deploy to Uberspace
 on:
   push:
     branches:
-      - githubActions
-
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +15,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
 
+      - name: Install and Build React Frontend
+        working-directory: /frontend/
+        run: |
+          export CI=false
+          npm install
+          npm run build
+
+      - name: Deploy React Frontend
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+          scp -r ./build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+
       - name: Deploy Backend Executable
+        working-directory: /backend/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
@@ -29,3 +46,5 @@ jobs:
             cd ~/backend/ &&
             supervisorctl restart kvadur-backend
           "
+          
+          
