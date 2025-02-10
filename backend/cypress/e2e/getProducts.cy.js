@@ -1,6 +1,5 @@
 "use strict";
 describe('GET /products', () => {
-
     it('should return all Products with status 200', () => {
         cy.request("http://0.0.0.0:46081/products/")
             .then((res) => {
@@ -24,7 +23,7 @@ describe('GET /products', () => {
         });
     });
     it('should validate size constraints for all products', () => {
-        cy.request("http://localhost:3003/products/")
+        cy.request("http://0.0.0.0:46081/products/")
             .then((res) => {
             expect(res.status).to.eq(200);
             expect(res.body.products).to.be.an("array");
@@ -37,7 +36,7 @@ describe('GET /products', () => {
         });
     });
     it('should validate review constraints for all products', () => {
-        cy.request("http://localhost:3003/products/")
+        cy.request("http://0.0.0.0:46081/products/")
             .then((res) => {
             expect(res.status).to.eq(200);
             res.body.products.forEach(product => {
