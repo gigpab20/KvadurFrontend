@@ -34,7 +34,9 @@ jobs:
 
       - name: Run Cypress Tests Frontend
         working-directory: frontend/
-        run: npx cypress run
+        run: |
+          netstat -nlp | grep 46081
+          npx cypress run
 
       - name: Install and Build React Frontend
         working-directory: frontend/
