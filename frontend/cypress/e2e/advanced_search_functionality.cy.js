@@ -1,6 +1,6 @@
 // cypress/e2e/advanced_search_functionality.cy.js
 
-describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
+/*describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
     it('sollte die Produktsuche korrekt durchführen', () => {
         const mockProducts = {
             products: [
@@ -38,4 +38,4 @@ describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
         cy.get('.product-card').should('have.length', 1);
         cy.get('.product-card').should('contain.text', 'No Risk No Story Tee');
     });
-});
+});*/

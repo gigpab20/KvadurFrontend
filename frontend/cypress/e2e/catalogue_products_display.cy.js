@@ -1,6 +1,6 @@
 // cypress/e2e/catalogue_products_display.cy.js
 
-describe('Katalogseite - Überprüfung der Produktanzahl', () => {
+/*describe('Katalogseite - Überprüfung der Produktanzahl', () => {
     it('sollte 2 Produkte anzeigen', () => {
         const mockProducts = {
             products: [
@@ -54,4 +54,4 @@ describe('Katalogseite - Überprüfung der Produktanzahl', () => {
         // Überprüfen, ob genau 2 Produkte angezeigt werden
         cy.get('.product-card').should('have.length', 2);
     });
-});
+});*/

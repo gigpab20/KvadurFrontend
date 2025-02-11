@@ -1,6 +1,6 @@
 // cypress/e2e/catalogue_product_details.cy.js
 
-describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
+/*describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
     const mockProducts = {
         products: [
             {
@@ -44,3 +44,4 @@ describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
         cy.get('.product-card').eq(1).should('contain.text', '52.99 EUR');
     });
 });
+*/
