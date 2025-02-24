@@ -1,5 +1,5 @@
 describe('Products Filter by Fabric', () => {
-    const baseUrl = 'http://0.0.0.0:46081/products';
+    const baseUrl = 'http://localhost:46081/api/products';
 
     it('should filter products by fabric', () => {
         const fabric = 'Baumwolle';

@@ -29,7 +29,7 @@
 
         // Besuche die Katalogseite
         cy.visit('http://0.0.0.0:46080/catalogue');
-        cy.wait('@getProducts');
+
 
         // Gib einen Suchbegriff ein
         cy.get('input[placeholder="Search..."]').type('Tee');

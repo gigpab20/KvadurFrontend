@@ -1,4 +1,346 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70cc40ad-0824-4383-b163-4456689d8792" name="Changes" comment="recompiled tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/cypress/e2e/advanced_search_functionality.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/cypress/e2e/advanced_search_functionality.cy.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;gigpab20&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gigpab20/KvadurFrontend.git&quot;,
+    &quot;accountId&quot;: &quot;7e31b17e-27df-4856-ad0a-62b70de81874&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2sqD2sdrx7BANorwsKmljGMPboY" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/mnt/Data/Data/HTL Kaindorf/5BHIF/SYP-Projekt/MergeRepos/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70cc40ad-0824-4383-b163-4456689d8792" name="Changes" comment="" />
+      <created>1739174008269</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739174008269</updated>
+      <workItem from="1739174009992" duration="14537000" />
+      <workItem from="1739218699005" duration="6206000" />
+      <workItem from="1739227528940" duration="81000" />
+      <workItem from="1739274289980" duration="5318000" />
+      <workItem from="1740136734724" duration="188000" />
+    </task>
+    <task id="LOCAL-00001" summary="tested if all files are merged now">
+      <option name="closed" value="true" />
+      <created>1739174218831</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739174218831</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test github actions">
+      <option name="closed" value="true" />
+      <created>1739174983481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739174983481</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test github actions">
+      <option name="closed" value="true" />
+      <created>1739175053001</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739175053002</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test github actions">
+      <option name="closed" value="true" />
+      <created>1739175175110</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739175175111</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added cypress to workflow">
+      <option name="closed" value="true" />
+      <created>1739176180253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739176180253</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removed ssl shit">
+      <option name="closed" value="true" />
+      <created>1739177567594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177567594</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed ssl shit">
+      <option name="closed" value="true" />
+      <created>1739177680195</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177680195</updated>
+    </task>
+    <task id="LOCAL-00008" summary="removed ssl shit number 3">
+      <option name="closed" value="true" />
+      <created>1739177831466</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177831466</updated>
+    </task>
+    <task id="LOCAL-00009" summary="tests with right url">
+      <option name="closed" value="true" />
+      <created>1739178138693</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739178138693</updated>
+    </task>
+    <task id="LOCAL-00010" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739178724928</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739178724928</updated>
+    </task>
+    <task id="LOCAL-00011" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739179057963</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739179057963</updated>
+    </task>
+    <task id="LOCAL-00012" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739179272533</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1739179272533</updated>
+    </task>
+    <task id="LOCAL-00013" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739179792251</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1739179792251</updated>
+    </task>
+    <task id="LOCAL-00014" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739184407722</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1739184407722</updated>
+    </task>
+    <task id="LOCAL-00015" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739184700767</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1739184700767</updated>
+    </task>
+    <task id="LOCAL-00016" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739185014665</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1739185014665</updated>
+    </task>
+    <task id="LOCAL-00017" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739185286814</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1739185286814</updated>
+    </task>
+    <task id="LOCAL-00018" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739185628788</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1739185628788</updated>
+    </task>
+    <task id="LOCAL-00019" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739199637269</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1739199637269</updated>
+    </task>
+    <task id="LOCAL-00020" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739222740266</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1739222740266</updated>
+    </task>
+    <task id="LOCAL-00021" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739222873317</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1739222873317</updated>
+    </task>
+    <task id="LOCAL-00022" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739223016271</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1739223016271</updated>
+    </task>
+    <task id="LOCAL-00023" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739223537438</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1739223537438</updated>
+    </task>
+    <task id="LOCAL-00024" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739225300229</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1739225300229</updated>
+    </task>
+    <task id="LOCAL-00025" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739226920550</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1739226920550</updated>
+    </task>
+    <task id="LOCAL-00026" summary="recompiled tests">
+      <option name="closed" value="true" />
+      <created>1739227484501</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1739227484501</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/backend/userModel.js" />
+        <option value="$PROJECT_DIR$/backend/routes/products.js" />
+        <option value="$PROJECT_DIR$/backend/routes/users.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/getProducts.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/getUser.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/getUserByUsername.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/filterProducts.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/productSizeFilter.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productColorFilter.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidFilter.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productPriceRangeFilter.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productFabricFilter.cy.js" />
+        <option value="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidPriceRangeFilter.cy.js" />
+        <option value="$PROJECT_DIR$/frontend/cypress.config.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tested if all files are merged now" />
+    <MESSAGE value="test github actions" />
+    <MESSAGE value="added cypress to workflow" />
+    <MESSAGE value="removed ssl shit" />
+    <MESSAGE value="removed ssl shit number 3" />
+    <MESSAGE value="tests with right url" />
+    <MESSAGE value="recompiled tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="recompiled tests" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
 </project>

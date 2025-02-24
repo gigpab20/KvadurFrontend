@@ -1,5 +1,6 @@
 describe('Products Sorted', () => {
-    const baseUrl = 'https://kakvadur.uber.space/api/products/';
+    const baseUrl = 'http://localhost:46081/api/products/';
+
     it('should filter products by color', () => {
         const color = 'washed black';
         cy.request(`${baseUrl}/filter/color?value=${color}`).then((response) => {
