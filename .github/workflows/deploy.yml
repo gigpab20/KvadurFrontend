@@ -32,45 +32,42 @@ jobs:
         run: |
           npx cypress run
 
-      #- name: Run Cypress Tests Frontend
-      #  working-directory: frontend/
-      #  run: |
-      #    npx cypress run
-      #
-      #- name: Install and Build React Frontend
-      #  working-directory: frontend/
-      #  run: |
-      #    export CI=false
-      #    npm run build
-      #
-      #- name: Deploy React Frontend
-      #  env:
-      #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #  run: |
-      #    mkdir -p ~/.ssh
-      #    echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-      #    chmod 600 ~/.ssh/id_rsa
-      #    ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-      #    pwd
-      #    scp -r frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
-      #
-      #- name: Deploy Backend Executable
-      #  working-directory: backend/
-      #  env:
-      #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #  run: |
-      #      ls
-      #      pwd
-      #      mkdir -p ~/.ssh
-      #      echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-      #      chmod 600 ~/.ssh/id_rsa
-      #      ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-      #
-      #      scp -r ./* kakvadur@mirfac.uberspace.de:~/backend/
-      #      ssh kakvadur@mirfac.uberspace.de "
-      #        cd ~/backend/ &&
-      #        supervisorctl restart kvadur-backend
-      #      "
+      - name: Run Cypress Tests Frontend
+        working-directory: frontend/
+        run: |
+          npx cypress run
 
+      - name: Install and Build React Frontend
+        working-directory: frontend/
+        run: |
+          export CI=false
+          npm run build
 
+      - name: Deploy React Frontend
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+          pwd
+          scp -r frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+
+      - name: Deploy Backend Executable
+        working-directory: backend/
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+            ls
+            pwd
+            mkdir -p ~/.ssh
+            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
       
+            scp -r ./* kakvadur@mirfac.uberspace.de:~/backend/
+            ssh kakvadur@mirfac.uberspace.de "
+              cd ~/backend/ &&
+              supervisorctl restart kvadur-backend
+            "

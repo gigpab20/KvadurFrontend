@@ -31,19 +31,27 @@ interface Product {
 
 function App() {
     const [products, setProducts] = useState<Product[]>([]);
-
+    const [error, setError] = useState<string | null>(null);
     //für server zum deployen:
     //http://mirfac.uberspace.de:46081/products
 
     useEffect(() => {
         fetch('https://kakvadur.uber.space/api/products/'
         )
-
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    // Status nicht 200 => wir zeigen nachher eine Fehlermeldung
+                    throw new Error(`Fehler beim Laden der Produkte: HTTP ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 setProducts(data.products);
             })
-            .catch(error => console.error('Error fetching products:', error));
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                setError("Error");
+            });
     }, []);
 
     return (
