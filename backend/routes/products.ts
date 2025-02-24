@@ -32,6 +32,7 @@ router.get('/', (req: Request, res: Response) => {
   res.json(productsData);
 });
 
+
 router.get("/filter/:mode/", (req: Request, res: Response) => {
   let mode = req.params.mode;
   let value = req.query.value;

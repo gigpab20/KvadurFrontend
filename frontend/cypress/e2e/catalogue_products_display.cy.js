@@ -1,6 +1,6 @@
 // cypress/e2e/catalogue_products_display.cy.js
 
-/*describe('Katalogseite - Überprüfung der Produktanzahl', () => {
+describe('Katalogseite - Überprüfung der Produktanzahl', () => {
     it('sollte 2 Produkte anzeigen', () => {
         const mockProducts = {
             products: [
@@ -40,13 +40,13 @@
         };
 
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'https://kakvadur.uber.space/api/products/', {
+        cy.intercept('GET', 'http://localhost:46081/api/products/', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
 
         // Besuchen der Katalogseite
-        cy.visit('http://0.0.0.0:46080/catalogue');
+        cy.visit('http://localhost:46080/catalogue');
 
         // Warten, bis der API-Aufruf abgeschlossen ist
         cy.wait('@getProducts');
@@ -54,4 +54,4 @@
         // Überprüfen, ob genau 2 Produkte angezeigt werden
         cy.get('.product-card').should('have.length', 2);
     });
-});*/
+});

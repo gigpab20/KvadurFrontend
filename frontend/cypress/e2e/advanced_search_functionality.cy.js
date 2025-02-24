@@ -1,6 +1,6 @@
 // cypress/e2e/advanced_search_functionality.cy.js
 
-/*describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
+describe('Produktsuche - Überprüfung der Suchfunktionalität', () => {
     it('sollte die Produktsuche korrekt durchführen', () => {
         const mockProducts = {
             products: [
@@ -20,15 +20,8 @@
                 },
             ],
         };
-
-        // Intercept API-Aufruf und stelle Mock-Daten bereit
-        cy.intercept('GET', 'https://kakvadur.uber.space/api/products/', {
-            statusCode: 200,
-            body: mockProducts,
-        }).as('getProducts');
-
         // Besuche die Katalogseite
-        cy.visit('http://0.0.0.0:46080/catalogue');
+        cy.visit('http://localhost:46080/catalogue');
 
 
         // Gib einen Suchbegriff ein
@@ -38,4 +31,4 @@
         cy.get('.product-card').should('have.length', 1);
         cy.get('.product-card').should('contain.text', 'No Risk No Story Tee');
     });
-});*/
+});

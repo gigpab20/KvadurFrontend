@@ -1,6 +1,6 @@
 // cypress/e2e/catalogue_product_details.cy.js
 
-/*describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
+describe('Katalogseite - Überprüfung der Produktnamen und Preise', () => {
     const mockProducts = {
         products: [
             {
@@ -24,7 +24,7 @@
 
     beforeEach(() => {
         // API-Aufruf abfangen und Mock-Daten bereitstellen
-        cy.intercept('GET', 'https://kakvadur.uber.space/api/products/', {
+        cy.intercept('GET', 'http://localhost:46081/api/products/', {
             statusCode: 200,
             body: mockProducts,
         }).as('getProducts');
@@ -32,7 +32,7 @@
 
     it('sollte die korrekten Produktnamen und Preise anzeigen', () => {
         // Besuchen der Katalogseite
-        cy.visit('http://0.0.0.0:46080/catalogue');
+        cy.visit('http://localhost:46080/catalogue');
 
         // Warten, bis der API-Aufruf abgeschlossen ist
         cy.wait('@getProducts');
@@ -44,4 +44,3 @@
         cy.get('.product-card').eq(1).should('contain.text', '52.99 EUR');
     });
 });
-*/

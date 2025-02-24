@@ -2,7 +2,7 @@
 
 describe('Kontaktformular - Validierung und Absenden', () => {
     it('sollte das Kontaktformular validieren und erfolgreich absenden', () => {
-        cy.visit('http://0.0.0.0:46080/contact');
+        cy.visit('http://localhost:46080/contact');
 
         // Versuch, das Formular ohne Eingaben abzusenden
         cy.get('form').submit();
