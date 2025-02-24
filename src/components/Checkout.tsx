@@ -3,10 +3,10 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import "../css/Checkout.css";
-import {CartContext} from "./CartContext";
+import { CartContext } from "./CartContext";
 import Annoucement from "./Annoucement";
 import Navbar from "./Navbar";
-import Footer from "./Footer"; // WICHTIG: hier binden wir das CSS ein
+import Footer from "./Footer";
 
 const Checkout: React.FC = () => {
     // Tabs Zustand (0 = Warenkorb, 1 = Versand/Adresse, 2 = Zahlung, 3 = Review)
@@ -72,54 +72,73 @@ const Checkout: React.FC = () => {
     const renderShippingTab = () => (
         <div className="tab-content">
             <h2 className="section-title">Lieferadresse</h2>
+
             <div className="form-group">
                 <label>Vorname</label>
+                {/* NEU: name="firstName" */}
                 <input
+                    name="firstName"
                     className="input-field"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>Nachname</label>
+                {/* NEU: name="lastName" */}
                 <input
+                    name="lastName"
                     className="input-field"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>Adresse</label>
+                {/* NEU: name="address" */}
                 <input
+                    name="address"
                     className="input-field"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>PLZ</label>
+                {/* NEU: name="zip" */}
                 <input
+                    name="zip"
                     className="input-field"
                     value={zipCode}
                     onChange={(e) => setZipCode(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>Stadt</label>
+                {/* NEU: name="city" */}
                 <input
+                    name="city"
                     className="input-field"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>Land</label>
+                {/* NEU: name="country" */}
                 <input
+                    name="country"
                     className="input-field"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                 />
             </div>
+
             <button className="button next-button" onClick={() => setActiveTab(2)}>
                 Weiter
             </button>
@@ -184,7 +203,8 @@ const Checkout: React.FC = () => {
                 <p className="cart-total">Gesamt: {total.toFixed(2)} EUR</p>
             </div>
 
-            <button className="button submit-button" onClick={handleSubmit}>
+            {/* NEU: type="submit" */}
+            <button type="submit" className="button submit-button" onClick={handleSubmit}>
                 Jetzt kaufen
             </button>
         </div>

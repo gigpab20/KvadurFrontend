@@ -21,7 +21,9 @@ const Cart: React.FC = () => {
             <Navbar />
             <div style={{ padding: '20px' }}>
                 <h1>Dein Warenkorb</h1>
-                {cartItems.length === 0 ? (
+                {cartItems.length === 0
+
+                    ? (
                     <p>Dein Warenkorb ist leer.</p>
                 ) : (
                     <div>
