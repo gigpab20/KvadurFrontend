@@ -1,5 +1,5 @@
 describe('Products Filter by Price Range', () => {
-    const baseUrl = 'http://localhost:46081/api/products/';
+    const baseUrl = 'http://localhost:46081/api/products';
 
     it('should filter products by price range', () => {
         const priceRange = '30-60';

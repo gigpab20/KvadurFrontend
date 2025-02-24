@@ -1,6 +1,6 @@
 "use strict";
 describe('Invalid Price Range Format', () => {
-    const baseUrl = 'http://localhost:46081/api/products/';
+    const baseUrl = 'http://localhost:46081/api/products';
     it('should return an error for invalid price range format', () => {
         cy.request({
             method: 'GET',

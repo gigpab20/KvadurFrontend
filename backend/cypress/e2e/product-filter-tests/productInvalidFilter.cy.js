@@ -1,6 +1,6 @@
 "use strict";
 describe('Invalid Filter Mode', () => {
-    const baseUrl = 'http://localhost:46081/api/products/';
+    const baseUrl = 'http://localhost:46081/api/products';
     it('should return an error for an invalid filter mode', () => {
         cy.request({
             method: 'GET',

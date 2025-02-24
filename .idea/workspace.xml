@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70cc40ad-0824-4383-b163-4456689d8792" name="Changes" comment="recompiled tests">
+    <list default="true" id="70cc40ad-0824-4383-b163-4456689d8792" name="Changes" comment="changed url for tests to be localhost">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/cypress/e2e/advanced_search_functionality.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/cypress/e2e/advanced_search_functionality.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/filterProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/filterProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/filterProducts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/filterProducts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getProducts.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getProducts.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getProducts.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getProducts.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getUser.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getUser.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getUser.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getUser.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getUserByUsername.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getUserByUsername.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/getUserByUsername.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/getUserByUsername.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productColorFilter.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productColorFilter.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productColorFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productColorFilter.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productFabricFilter.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productFabricFilter.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productFabricFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productFabricFilter.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidFilter.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidFilter.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidFilter.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidPriceRangeFilter.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidPriceRangeFilter.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidPriceRangeFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productInvalidPriceRangeFilter.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productPriceRangeFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/product-filter-tests/productPriceRangeFilter.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/productSizeFilter.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/productSizeFilter.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/cypress/e2e/productSizeFilter.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cypress/e2e/productSizeFilter.cy.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,21 +63,22 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/mnt/Data/Data/HTL Kaindorf/5BHIF/SYP-Projekt/MergeRepos/frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/mnt/Data/Data/HTL Kaindorf/5BHIF/POS/d20250210_Ex0012_EmployeeJPA/Ex0012_EmployeeJPA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "ts.external.directory.path": "/mnt/Data/Data/HTL Kaindorf/5BHIF/SYP-Projekt/MergeRepos/frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -85,6 +105,8 @@
       <workItem from="1739227528940" duration="81000" />
       <workItem from="1739274289980" duration="5318000" />
       <workItem from="1740136734724" duration="188000" />
+      <workItem from="1740376227193" duration="1099000" />
+      <workItem from="1740380438389" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="tested if all files are merged now">
       <option name="closed" value="true" />
@@ -294,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739227484501</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="changed url for tests to be localhost">
+      <option name="closed" value="true" />
+      <created>1740376779147</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1740376779148</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +367,8 @@
     <MESSAGE value="removed ssl shit number 3" />
     <MESSAGE value="tests with right url" />
     <MESSAGE value="recompiled tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="recompiled tests" />
+    <MESSAGE value="changed url for tests to be localhost" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed url for tests to be localhost" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
