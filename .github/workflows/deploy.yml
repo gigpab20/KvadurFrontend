@@ -59,15 +59,25 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-            ls
-            pwd
-            mkdir -p ~/.ssh
-            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
-            ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
-      
-            scp -r ./* kakvadur@mirfac.uberspace.de:~/backend/
-            ssh kakvadur@mirfac.uberspace.de "
-              cd ~/backend/ &&
-              supervisorctl restart kvadur-backend
-            "
+          ls
+          pwd
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
+          
+          # Archive backend folder
+          cd ..
+          tar -czf backend.tar.gz backend/
+          
+          # Copy the archive to the server
+          scp backend.tar.gz kakvadur@mirfac.uberspace.de:~/
+          
+          # SSH into the server, extract the archive, and restart the backend
+          ssh kakvadur@mirfac.uberspace.de "
+            rm -rf ~/backend/ &&
+            mkdir -p ~/backend/ &&
+            tar -xzf ~/backend.tar.gz -C ~/ &&
+            rm ~/backend.tar.gz &&
+            supervisorctl restart kvadur-backend
+          "
