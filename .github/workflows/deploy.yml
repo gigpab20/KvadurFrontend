@@ -52,7 +52,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan mirfac.uberspace.de >> ~/.ssh/known_hosts
           pwd
-          scp -r frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
+          scp -rv frontend/build/* kakvadur@mirfac.uberspace.de:/home/kakvadur/html/
 
 
       - name: Deploy Backend Executable
