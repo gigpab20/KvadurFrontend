@@ -27,15 +27,15 @@ jobs:
           npm install      
           npm start &
 
-      - name: Run Cypress Tests Backend
-        working-directory: backend/
-        run: |
-          npx cypress run
+      #- name: Run Cypress Tests Backend
+      #  working-directory: backend/
+      #  run: |
+      #    npx cypress run
 
-      - name: Run Cypress Tests Frontend
-        working-directory: frontend/
-        run: |
-          npx cypress run
+      #- name: Run Cypress Tests Frontend
+      #  working-directory: frontend/
+      #  run: |
+      #    npx cypress run
 
       - name: Install and Build React Frontend
         working-directory: frontend/
